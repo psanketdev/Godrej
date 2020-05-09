@@ -1,0 +1,798 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 95.70%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+header {
+  width: 100%;
+  padding: 15px 0 24px 0;
+  box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
+}
+
+header .wrapper {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger {
+  width: 22px;
+  display: none;
+  float: right;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.burger span {
+  width: 22px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  display: block;
+  background-color: #000;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+nav {
+  width: 64%;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  display: -webkit-box;
+  align-items: center;
+}
+
+.nav-links li {
+  padding: 0 20px;
+  position: relative;
+}
+
+.nav-links li:nth-child(2) a { color: #0771add9;}
+.nav-links li a:hover { color: #0771add9;;}
+
+
+.nav-links li::before{ 
+  content: '';
+  width: 1px;
+  height: 20px;
+  background-color: rgba(0,0,0,.1);
+  position: absolute;
+  top: -9%;
+  left: 0%;
+}
+
+.nav-links li a {
+  color: #6b6e70;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all .5s linear;
+}
+
+.right-menu {
+  width: 19%;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  align-items: center;
+  position: relative;
+}
+
+.right-menu a:first-of-type::after{
+  content: '';
+  width: 1px;
+  height: 34px;
+  background-color: rgba(0,0,0,.1);
+  position: absolute;
+  top: 0%;
+  right: 75%
+}
+
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+h2 {
+  padding-bottom: 15px;
+  font-size: 45px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* residences style start */
+.residences {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 3%;
+}
+
+.residences .wrapper {
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  -webkit-box-pack: justify;
+  align-items: center;
+}
+
+.residences-details {
+  width: 35%;
+  padding: 0 9% 0 7.5%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.residences figure { width: 50%;}
+.residences-details p:not(:last-of-type) { padding-bottom: 30px;}
+
+.residences-details p {
+  padding: 0 1% 0 0;
+  font-size: 16px;
+  color: #8c8988;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+/* residences style end */
+/* floorplans section start */
+.floorplans h2 { padding-left: 5%;}
+.floor-tabs li a:hover ,.floor-tabs .active a{color: #4696f9;}
+
+.floorplans  p {
+  padding: 0 0 3% 5%;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  color: #8c8988;
+}
+
+.floor-tabs { 
+  display: inline-block;
+  padding: 0 0 2% 5%;
+}
+
+.floor-tabs li {display: inline-block;}
+
+.floor-tabs li a {
+  margin-right: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: rgba(0,0,0,.7);
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+#tab1-img,
+#tab2-img,
+#tab3-img,
+#tab4-img {
+  display: none;
+}
+
+.tab-color{ color: #4696f9}
+.active {display: block !important;}
+.floor-images li figure { width: 100%;}
+
+.floor-images li{
+  width: 100%;
+  margin-bottom: .5%;
+  display: inline-block;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.floor-arrows {
+  padding: 30px 0;
+  background-color: #717171;
+}
+
+.floor-arrows .wrapper {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  align-items: center;
+}
+
+.floor-arrows span, .video-arrows span {
+  margin: 0 auto 0 4%;
+  display: block;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: .5px;
+  text-align: left;
+  text-transform: capitalize;
+}
+/* floorplans section end */
+/* more about project section start*/
+.about-project { 
+  padding-top: 50px;
+  position: relative;
+}
+
+.about-project .wrapper { width: 100%;}
+
+.about-project h3 {
+  padding: 54px 15% 54px 16%;
+  color: #3f4044;
+  font-size: 40px;
+  font-style: italic;
+  text-align: left;
+}
+
+.about-project h3::before, .about-project h3::after {
+  font-family: "FontAwesome";
+  position: relative;
+  top: -20px;
+  font-size: 17px;
+}
+
+.about-project h3::before{ content: '\f10d';}
+.about-project h3::after{ content: '\f10e';}
+
+.video-container {
+  width: 100%;
+  position: relative;
+}
+
+.video-container a {
+  width: 100%;
+  display: block;
+}
+
+#video-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(0,0,0,.8);
+  transition: all .5s ease-in-out;
+  text-align: center;
+}
+
+video {
+  width: 50%;
+  height: auto;
+  z-index: 5;
+  animation-name: expo;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes expo {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(40%);
+  }
+}
+
+.cancle { 
+  text-indent:  -9999px;
+  display: inline-block;
+}
+
+.cancle::after {
+  content: '\f05c';
+  float: right;
+  text-indent: 0;
+  font-family: "Fontawesome";
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hideivideo { display: none;}
+
+.video-arrows {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 25px 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.video-arrows .wrapper {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* more about project section end*/
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+footer {
+  width: 100%;
+  padding: 80px 0 0 0;
+  background-color: #eee;
+}
+
+footer .wrapper {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  align-items: center;
+}
+
+.footer-section {
+  flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section + li {  vertical-align: top;}
+.footer-section h4 span { text-transform: uppercase;}
+
+.footer-section h4 {
+  padding: 0 0 20px 0;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 550;
+  vertical-align: top;
+}
+
+.footer-section h4 + a {
+  padding: 0 0 9px 0;
+  font-size: 13px;
+  display: block;
+  color: #797979;
+  font-weight: bold;
+}
+
+.enquirie-one li a:last-of-type, .enquirie-two li a:last-of-type, .enquirie-three li a:last-of-type{
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  color: #797979;
+}
+
+.footer-section li a:hover { 
+  color: #4696f9;
+  transition: .5s linear;
+}
+
+.enquirie-one li:nth-child(1) a:first-of-type { color: #4696f9;}
+.enquirie-one li, .enquirie-two li, .enquirie-three li {padding-bottom: 25px}
+.enquirie-one, .enquirie-two, .enquirie-three { vertical-align: top;}
+
+.twitter, .linkedin, .facebook {
+  text-indent: -9999px;
+  display: inline-block;
+}
+
+
+.twitter::before, .linkedin::before, .facebook::before {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  float: left;
+  font-family: "Fontawesome";
+  text-indent: 0;
+  color: #fff;
+  background: #000;
+  font-size: 18px;
+  text-align: center;
+  transition: all .5s linear;
+}
+
+.twitter:hover::before, .linkedin:hover::before, .facebook:hover::before { 
+  color: #4696f9; 
+  transform: scale(1.2);
+}
+
+.social-icons li:not(:last-of-type) { margin-right: 15px;}
+.social-icons li {padding-bottom: 0;}
+.facebook:before {background: #797979;}
+.twitter::before {content: "\f099";}
+.linkedin::before { content: "\f0e1";}
+.facebook::before { content: "\f09a";}
+
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+/*media query for 995px starts here*/
+@media only screen and (min-width: 1024px) {
+  .residences-details p:not(:last-of-type) { padding-bottom: 30px;}
+
+} 
+
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+
+nav { width: 22px; }
+h1{ width: 100%;}
+.right-menu {width: 0;}
+
+.burger { 
+  display: block;
+  position: relative;
+  right: 0%;
+}
+
+
+.nav-links {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 73.5px;
+  right: 0;
+  z-index: 999;
+  background-color: #3f4044;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+  align-items: center;
+  transform: translateY(-130%);
+  transition: all .5s ease-in-out;
+}
+
+.nav-links a {padding: 20px 0;}
+
+.nav--active{transform: translateY(0%);}
+.burger-active span:nth-child(1) {transform: rotate(-45deg) translate(-4px , 3px);}
+.burger-active span:nth-child(2) {opacity: 0;}
+.burger-active span:nth-child(3) {transform: rotate(45deg) translate(-4px , -3px);}
+.right-menu a:nth-child(2) {display: none;}
+
+.no-scroll {
+  overflow: hidden;
+  scroll-behavior: unset;
+}
+
+.right-menu .contact {
+  width: 50px;
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  z-index: 99;
+}
+
+.nav-links li {
+   display: block; 
+   text-align: center;
+}
+
+.nav-links li a { color: #eee;}
+.nav-links li a:hover { color: #eee;}
+.nav-links li:nth-child(2) a { color: #eee;}
+
+.nav-links li::before {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+.residences .wrapper {
+  width: 100%;
+  padding-top: 2%;
+  flex-direction: column;
+}
+
+.residences-details {
+  width: 90%;
+  padding: 30px 0%;
+}
+
+.residences figure { width: 100%;}
+.floorplans h2, .floorplans p, .floor-tabs { padding-left: 3%;}
+.floor-images li figure {width: 100%;}
+
+footer .wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.twitter:hover::before, .linkedin:hover::before, .facebook:hover::before { 
+  color: #fff; 
+  background: #000;
+  transform: scale(1);
+}
+
+.facebook:hover:before {background: #797979;}
+
+}
+
+
+/*media query for 768px starts here*/
+@media only screen and (max-width: 767px) {
+.about-project h3 {font-size: 35px;}
+.floorplans p { font-size: 17px;}
+.right-menu .contact {width: 40px;}
+
+.about-project h3 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.about-project h3::before, .about-project h3::after {
+  top: -10px;
+  font-size: 13px
+}
+
+.floor-arrows img, .video-arrows img {
+  height: 33px;
+  object-fit: contain;
+}
+
+footer .wrapper {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center  ;
+}
+
+.footer-section {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.twitter:hover::before, .linkedin:hover::before, .facebook:hover::before { 
+  color: #fff; 
+  background: #000;
+  transform: scale(1);
+}
+
+.facebook:hover:before {background: #797979;}
+}
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+
+h2 { font-size: 40px; 
+  text-align: center;
+}
+
+.floorplans p { font-size: 14px; 
+  line-height: 20px;
+}
+
+.floor-tabs li a {font-size: 15px;}
+.floor-tabs {padding-bottom: 6%;}
+.right-menu .contact {width: 35px;}
+.floorplans h2 { padding-top: 3%;}
+
+.floor-arrows img, .video-arrows img {
+  height: 30px;
+  object-fit: contain;
+}
+
+.about-project h3 {
+  padding: 27px 15% 54px 16%;
+  font-size: 24px;
+  text-align: left;
+}
+
+.about-project h3::before, .about-project h3::after {
+  top: -10px;
+  font-size: 10px
+}
+
+footer .wrapper {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center  ;
+}
+
+.footer-section {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.twitter:hover::before, .linkedin:hover::before, .facebook:hover::before { 
+  color: #fff; 
+  background: #000;
+  transform: scale(1);
+}
+
+
+.facebook:hover:before {background: #797979;}
+
+}
+
+/*media query for 320px starts here*/
+@media only screen and (max-width: 320px) {
+
+h2 { font-size: 25px;}
+.floorplans p { font-size: 14px;}
+.floor-tabs li a {font-size: 14px;}
+.right-menu .contact {width: 35px;}
+.floor-tabs li a {margin-right: 13px;}
+.floor-arrows {padding: 22px 0;}
+.video-arrows {padding: 16px 0;}
+
+.floor-arrows span, .video-arrows span {
+  margin: 0 auto 0 0%;
+  font-size: 12px;
+}
+
+.residences-details p {
+  padding: 0;
+  font-size: 14px;
+}
+
+
+.floor-arrows img, .video-arrows img {
+  height: 18px;
+  object-fit: contain;
+}
+
+.about-project h3 {
+  padding: 10px 15% 54px 16%;
+  font-size: 20px;
+  text-align: left;
+}
+
+.about-project h3::before, .about-project h3::after {
+  top: -8px;
+  font-size: 8px
+}
+
+footer .wrapper {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center  ;
+}
+
+.footer-section {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.twitter:hover::before, .linkedin:hover::before, .facebook:hover::before { 
+  color: #fff; 
+  background: #000;
+  transform: scale(1);
+}
+
+.footer-section h4 { font-size: 15px;}
+.facebook:hover:before {background: #797979;}
+
+.twitter::before, .linkedin::before, .facebook::before {
+  width: 15px;
+  height: 15px;
+  font-size: 13px
+};
+
+
+}
